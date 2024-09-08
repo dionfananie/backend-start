@@ -1,6 +1,6 @@
 services:
   backend:
-    image: dionfananie/backend-start # Remember to change the image name
+    image: dionfananie/backend-start:1.0 # Remember to change the image name
     build:
       context: .
     ports:
