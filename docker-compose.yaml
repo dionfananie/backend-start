@@ -1,0 +1,16 @@
+services:
+  backend:
+    image: dionfananie/backend-start # Remember to change the image name
+    build:
+      context: .
+    ports:
+      - "3030:3030"
+    depends_on:
+      - database
+  database:
+    image: postgres:alpine
+    ports:
+      - "5400:5432" #5400 is user access, 5432 is port in docker postgre
+    env_file: # Change into this
+      - path: .env
+        required: true
